@@ -1,0 +1,19 @@
+{
+  "created": "2022-06-23T21:37:04+02:00",
+  "author": "xxx <alex14fr@gmail.com",
+  "architecture": "amd64",
+  "os": "linux",
+  "rootfs": {
+    "type": "layers",
+    "diff_ids": [
+      "sha256:_ROOTFS_TAR_DIGEST"
+    ]
+  },
+  "config": {
+	  "Env": ["HOME=/tmp"],
+	  "WorkingDir": "/",
+	  "Entrypoint": ["/sbin/httpd"],
+	  "Cmd": ["-p","8080","-f","-v"],
+	  "ExposedPorts": {"8080/tcp": {}}
+	}
+}

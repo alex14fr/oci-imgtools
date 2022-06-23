@@ -1,0 +1,17 @@
+{
+	"schemaVersion": 2,
+	"mediaType": "application/vnd.oci.image.manifest.v1+json",
+	"config": { 
+		"mediaType": "_CONFIG_MIME", 
+		"size": _CONFIG_SIZE, 
+		"digest": "sha256:_CONFIG_DIGEST" 
+	}, 
+	"layers": [ 
+		{ 
+			"mediaType": "_ROOTFS_MIME", 
+			"size": _ROOTFS_TARGZ_SIZE, 
+			"digest": "sha256:_ROOTFS_TARGZ_DIGEST" 
+		}
+	]
+}
+

@@ -1,0 +1,7 @@
+creer rootfs.tar.gz
+editer config.json.in manifest.json.in
+php mkmanifestconfig.php (> manifest.json config.json)
+upload_blob rootfs
+upload_blob config.json
+upload_manifest manifest.json
+

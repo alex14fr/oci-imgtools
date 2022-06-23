@@ -1,0 +1,13 @@
+#arg: <blob-file>
+set -x
+mime="application/octet-stream"
+if [ "$1" = "config.json" ]; then
+	mime="$(cat config/mime_config)"
+fi
+curl -v -D /tmp/headers $(cat config/url)"/v2/"$(cat config/imgname)"/blobs/uploads/" -XPOST -H "$(cat config/authorization)" -H "Content-type: $mime"
+cr=$(echo  -e '\r')
+sed -i /tmp/headers -e "s/$cr//g"
+loc="$(grep -i location: /tmp/headers|sed 's/location: //i')"
+curl -v --data-binary @"$1" -XPUT -H "Content-type: $mime" -H "$(cat config/authorization)" "$loc"'&digest=sha256%3A'$(sha256sum "$1"|cut -d' ' -f1)
+
+

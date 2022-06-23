@@ -1,0 +1,2 @@
+#arg: blob_hash output_file
+curl -v $(cat config/url)"/v2/"$(cat config/imgname)"/blobs/"$1 -H "$(cat config/authorization)" -o "$2"

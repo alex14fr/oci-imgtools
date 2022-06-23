@@ -1,0 +1,2 @@
+#arg: <blob>
+curl -v $(cat config/url)"/v2/"$(cat config/imgname)"/blobs/$1" -XDELETE -H "$(cat config/authorization)"

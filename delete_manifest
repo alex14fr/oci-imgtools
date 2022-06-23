@@ -1,0 +1,3 @@
+set -x
+#arg: <reference>
+curl -v $(cat config/url)"/v2/"$(cat config/imgname)"/manifests/$1" -XDELETE -H "$(cat config/authorization)"

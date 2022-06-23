@@ -1,0 +1,2 @@
+#arg: 
+curl -v $(cat config/url)"/v2/"$(cat config/imgname)"/tags/list" -H "$(cat config/authorization)" -H "Accept: $(cat config/mime_manifest)"

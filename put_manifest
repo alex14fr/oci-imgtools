@@ -1,0 +1,3 @@
+set -x
+#arg: 
+curl -v $(cat config/url)"/v2/"$(cat config/imgname)"/manifests/latest" -XPUT -H "Content-Type: $(cat config/mime_manifest)" --data-binary @manifest.json -H "$(cat config/authorization)"

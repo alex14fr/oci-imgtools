@@ -1,0 +1,3 @@
+#arg: 
+curl -v $(cat config/url)"/v2/"$(cat config/imgname)"/manifests/latest" -H "$(cat config/authorization)" -H "Accept: *,$(cat config/mime_manifest)"
+#curl -v $(cat config/url)"/v2/"$(cat config/imgname)"/manifests/latest" -H "$(cat config/authorization)" -H "Accept: $(cat config/mime_manifest_oci)"
